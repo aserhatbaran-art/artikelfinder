@@ -1,0 +1,21 @@
+{
+  "name": "artikelfinder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline-PWA: Artikel (der/die/das) zu deutschen Substantiven per Live-Suche",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "data": "node scripts/build-data.mjs data/raw/raw-wiktextract-data.jsonl.gz",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.10",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.2"
+  }
+}

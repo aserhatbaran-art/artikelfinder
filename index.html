@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Artikelfinder</title>
+    <meta name="description" content="Der, die oder das? Artikel deutscher Substantive sofort finden – offline." />
+    <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17181a" media="(prefers-color-scheme: dark)" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Artikelfinder</h1>
+      <form role="search" id="form" autocomplete="off">
+        <label for="q" class="visually-hidden">Substantiv</label>
+        <input
+          id="q"
+          name="q"
+          type="search"
+          placeholder="Substantiv eingeben …"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="sentences"
+          spellcheck="false"
+          enterkeyhint="search"
+          autofocus
+        />
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite">Wörterbuch wird geladen …</p>
+      <ul id="results" class="results"></ul>
+    </main>
+    <footer>
+      <button type="button" id="info-open" class="link">Info &amp; Quellen</button>
+    </footer>
+    <dialog id="info" aria-labelledby="info-title">
+      <h2 id="info-title">Info &amp; Quellen</h2>
+      <p>
+        Die Wortdaten stammen aus dem
+        <a href="https://de.wiktionary.org/" rel="noopener">deutschen Wiktionary</a> (Autorinnen und Autoren
+        des Wiktionary), maschinell aufbereitet mit
+        <a href="https://kaikki.org/dewiktionary/" rel="noopener">Wiktextract / kaikki.org</a> (Tatu Ylonen).
+        Lizenz der Daten: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="noopener">CC BY-SA 4.0</a>.
+        Die aufbereitete Wortliste darf unter derselben Lizenz weitergegeben werden.
+      </p>
+      <p>
+        Artikel von Wörtern, die nicht im Wörterbuch stehen, werden vom Grundwort abgeleitet und als
+        „abgeleitet“ gekennzeichnet. Das trifft fast immer, ist aber nicht garantiert.
+      </p>
+      <p>Die App läuft nach dem ersten Laden vollständig offline und sendet keine Daten.</p>
+      <p id="data-info" class="muted"></p>
+      <form method="dialog"><button class="btn">Schließen</button></form>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
