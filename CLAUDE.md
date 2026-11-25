@@ -28,6 +28,6 @@ Zweck: Offline-PWA, die per Live-Suche den Artikel (der/die/das, auch mehrere) d
 
 ## Achtung
 - `src/data/nomen.txt` und `data/bedeutungen.json` sind generiert und CC BY-SA 4.0 (Wiktionary) – nicht von Hand ändern, Quellenangabe im Info-Dialog beibehalten
-- `data/raw/` (≈300 MB) ist gitignored
+- `data/raw/` (≈300 MB) und `data/bedeutungen.json` (13 MB, erst für Stufe 2) sind gitignored; `.gitattributes` erzwingt LF
 - Sortierung in nomen.txt muss zu `compareEntries` passen, sonst sortiert die App beim Start neu (langsam)
 - Neue Dateien in `public/` in `PUBLIC_FILES` (vite.config.ts) eintragen, sonst nicht offline verfügbar
